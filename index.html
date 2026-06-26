@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kara Jones | PhD Candidate in Economics</title>
   <style>
-    /* Color palette from karajlovett.com */
     :root {
-      --bg-header: #f2ece8;        /* off-white/blush header */
-      --nav-text: #8c1f45;         /* dark pink/burgundy nav */
-      --accent-green: #2d5a3d;     /* dark green for accents/links */
+      --bg-header: #f2ece8;
+      --nav-text: #8c1f45;
+      --accent-green: #2d5a3d;
       --body-bg: #ffffff;
       --text-main: #2c2c2c;
       --text-muted: #666;
       --border-light: #e0d8d4;
-      --section-divider: #f2ece8;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +25,7 @@
       line-height: 1.75;
     }
 
-    /* ── Navigation ── */
+    /* Navigation */
     nav {
       background: var(--bg-header);
       padding: 0 2rem;
@@ -41,11 +39,7 @@
       z-index: 100;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
 
     nav a {
       text-decoration: none;
@@ -60,14 +54,14 @@
 
     nav a:hover { opacity: 0.7; }
 
-    /* ── Main layout ── */
+    /* Main layout */
     main {
       max-width: 780px;
       margin: 0 auto;
       padding: 3rem 2rem 5rem;
     }
 
-    /* ── Hero / intro ── */
+    /* Hero */
     .hero {
       display: flex;
       gap: 2.5rem;
@@ -75,22 +69,6 @@
       margin-bottom: 3rem;
       padding-bottom: 3rem;
       border-bottom: 1px solid var(--border-light);
-    }
-
-    .hero-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 3px solid var(--border-light);
-      background: var(--bg-header);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      text-align: center;
     }
 
     .hero-photo-placeholder {
@@ -126,10 +104,7 @@
       letter-spacing: 0.03em;
     }
 
-    .hero-text p {
-      color: var(--text-main);
-      margin-bottom: 0.75rem;
-    }
+    .hero-text p { color: var(--text-main); margin-bottom: 0.75rem; }
 
     .contact-info {
       margin-top: 1.25rem;
@@ -138,17 +113,11 @@
       color: var(--text-muted);
     }
 
-    .contact-info a {
-      color: var(--accent-green);
-      text-decoration: none;
-    }
-
+    .contact-info a { color: var(--accent-green); text-decoration: none; }
     .contact-info a:hover { text-decoration: underline; }
 
-    /* ── Sections ── */
-    section {
-      margin-bottom: 3rem;
-    }
+    /* Sections */
+    section { margin-bottom: 3rem; }
 
     section h2 {
       font-size: 1.1rem;
@@ -156,31 +125,19 @@
       font-family: 'Arial', sans-serif;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--nav-text);
+      color: var(--accent-green);
       margin-bottom: 1.5rem;
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--border-light);
     }
 
-    /* ── Papers ── */
-    .paper {
-      margin-bottom: 1.75rem;
-    }
+    /* Papers */
+    .paper { margin-bottom: 1.75rem; }
 
-    .paper-title {
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 0.2rem;
-    }
+    .paper-title { font-weight: bold; font-size: 16px; margin-bottom: 0.2rem; }
 
-    .paper-title a {
-      color: var(--text-main);
-      text-decoration: none;
-    }
-
-    .paper-title a:hover {
-      color: var(--accent-green);
-    }
+    .paper-title a { color: var(--text-main); text-decoration: none; }
+    .paper-title a:hover { color: var(--accent-green); }
 
     .paper-meta {
       font-family: 'Arial', sans-serif;
@@ -204,40 +161,59 @@
       text-transform: uppercase;
     }
 
-    .paper-abstract {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
+    .paper-abstract { font-size: 15px; color: var(--text-muted); line-height: 1.65; }
 
-    /* ── Teaching ── */
-    .course {
-      margin-bottom: 1.25rem;
-    }
-
-    .course-name {
-      font-weight: bold;
+    /* Teaching */
+    .teaching-intro {
       font-size: 16px;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
+
+    .teaching-subhead {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .course { margin-bottom: 0.6rem; }
+
+    .course-name { font-size: 15px; color: var(--text-main); }
 
     .course-detail {
       font-family: 'Arial', sans-serif;
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
-    /* ── Writing ── */
-    .writing-item {
-      margin-bottom: 1.25rem;
-    }
-
-    .writing-item a {
-      font-weight: bold;
+    /* Writing */
+    .writing-intro {
+      font-size: 16px;
       color: var(--text-main);
-      text-decoration: none;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
     }
 
+    .writing-intro a { color: var(--accent-green); text-decoration: none; }
+    .writing-intro a:hover { text-decoration: underline; }
+
+    .writing-item { margin-bottom: 1.25rem; }
+
+    .writing-item a { font-weight: bold; color: var(--text-main); text-decoration: none; }
     .writing-item a:hover { color: var(--accent-green); }
+
+    .writing-item .writing-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 0.1rem;
+    }
 
     .writing-venue {
       font-family: 'Arial', sans-serif;
@@ -245,10 +221,8 @@
       color: var(--text-muted);
     }
 
-    /* ── CV section ── */
-    .cv-section p {
-      margin-bottom: 0.75rem;
-    }
+    /* CV */
+    .cv-section p { margin-bottom: 0.75rem; }
 
     .cv-link {
       display: inline-block;
@@ -266,7 +240,7 @@
 
     .cv-link:hover { opacity: 0.85; }
 
-    /* ── Footer ── */
+    /* Footer */
     footer {
       background: var(--bg-header);
       text-align: center;
@@ -277,7 +251,7 @@
       border-top: 1px solid var(--border-light);
     }
 
-    /* ── Responsive ── */
+    /* Responsive */
     @media (max-width: 580px) {
       .hero { flex-direction: column; align-items: center; text-align: center; }
       .contact-info { text-align: center; }
@@ -306,15 +280,18 @@
         <h1>Kara Jones</h1>
         <div class="title">PhD Candidate in Economics &middot; University of South Carolina</div>
         <p>
-          I am a PhD candidate in economics at the Darla Moore School of Business, advised by Dr. Jason DeBacker. My research focuses on place-based economic policy and tax compliance.
+          I am a PhD candidate in Economics at the Darla Moore School of Business at the University of South Carolina. My research interests include regional development, tourism, urban economics, and tax policy. These interests are tied together by a broader interest in poverty alleviation and sustainable local economic growth.
         </p>
         <p>
-          I am on the job market in 2025&ndash;2026.
+          My work examines how public policies shape economic opportunity across communities, with particular attention to the conditions under which place-based and local development policies succeed or fall short.
+        </p>
+        <p>
+          I am on the job market in 2026&ndash;2027.
         </p>
         <div class="contact-info">
-          <a href="mailto:youremail@email.sc.edu">youremail@email.sc.edu</a>
+          kpjones [at] email.sc.edu
           &nbsp;&middot;&nbsp;
-          <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/joneskara/" target="_blank">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -325,28 +302,46 @@
 
       <div class="paper">
         <div class="paper-status">Job Market Paper</div>
-        <div class="paper-title"><a href="#">Tax Enforcement and Short-Term Rental Hosts: Evidence from Florida</a></div>
-        <div class="paper-meta">Working Paper, 2025</div>
+        <div class="paper-title"><a href="#">Poverty Reduction or Relocation? Long-Run Neighborhood Change Following Place-Based Policy</a></div>
+        <div class="paper-meta">Working Paper</div>
         <div class="paper-abstract">
-          This paper examines how enforcement shocks affect property tax compliance among short-term rental hosts, using Airbnb Voluntary Collection Agreements in Florida as a quasi-natural experiment. I apply a bunching estimator to AirDNA data (2015&ndash;2024) to identify behavioral responses around filing thresholds.
+          This paper explores how place-based policies reshape neighborhoods over time by focusing on gentrification and population movement following Empowerment Zone (EZ) and Enterprise Community (EC) designation. Using restricted Census data, I track changes in housing costs, income composition, and migration flows at the tract level. I conceptualize gentrification as a process of neighborhood upgrading driven by rising costs and demographic turnover. A difference-in-differences approach compares treated areas to similar untreated neighborhoods to estimate how these dynamics evolve after designation. The results shed light on whether economic development policies improve local welfare or instead contribute to displacement of existing residents. Results are forthcoming, but I expect to find greater rates of gentrification and outmigration in treated areas compared to the control areas.
         </div>
       </div>
 
       <div class="paper">
-        <div class="paper-status">Published</div>
-        <div class="paper-title"><a href="https://doi.org/10.3886/E249865V1" target="_blank">Reindustrialization Meets Rural Reality: FDI Incentives in Rural Counties</a></div>
-        <div class="paper-meta"><em>Contemporary Economic Policy</em>, 2025</div>
+        <div class="paper-status">Under Review</div>
+        <div class="paper-title"><a href="#">Exempt, Evade, Enforce: Unpacking Property Tax Dynamics in the Short-Term Rental Market</a></div>
+        <div class="paper-meta">Under Review</div>
         <div class="paper-abstract">
-          This paper studies the effects of foreign direct investment incentives on rural county labor markets, using a matched difference-in-differences design.
+          How does third-party reporting shape property tax compliance? Local governments rely primarily on property taxes for funding public services, yet compliance heavily relies on self-reported property use with little verification. STR hosts can exploit this verification gap by managing rental activity to retain owner-occupied exemptions. Using Airbnb and VRBO data from 2015&ndash;2024 in Florida, I apply a bunching estimator at the state's 30-day rental-day exemption threshold and exploit an enforcement shock to detect tax evasion. The enforcement shock sharply changes host behavior. Bunching near the threshold is negligible beforehand but grows substantially after, with hosts cutting bookings by more than 16 nights. This bunching behavior translates to estimated revenue effects of $15 million over the analysis period. These results demonstrate that even lenient third-party reporting generates meaningful compliance gains and suggests that data-sharing could meaningfully strengthen compliance in decentralized tax systems.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-status">R&amp;R</div>
+        <div class="paper-title"><a href="#">Reindustrialization Meets Rural Reality: The Limits of FDI Led Development</a></div>
+        <div class="paper-meta">Revise &amp; Resubmit, <em>Contemporary Economic Policy</em> (2026)</div>
+        <div class="paper-abstract">
+          As industrial policy drives new waves of foreign direct investment (FDI) into rural areas of the U.S., can FDI job growth increase rural incomes? Using synthetic control, difference-in-differences, and propensity score matching, I find that rural FDI consistently generates job growth but has no impact on income growth. Evidence from Kia Motors' $1.2 billion investment in Troup County, Georgia, and a national panel of rural counties (1995&ndash;2019) shows that FDI raises employment&mdash;by 13&ndash;16% locally and 3% nationally&mdash;but has no average effect on income. Gains occur where housing and labor markets are strong, suggesting policymakers must pair FDI with policies that improve housing supply, mobility, and absorptive capacity to see employment and income gains.
         </div>
       </div>
 
       <div class="paper">
         <div class="paper-status">Working Paper</div>
-        <div class="paper-title"><a href="#">Poverty Reduction or Relocation? Long-Run Neighborhood Change Following Place-Based Policy</a></div>
-        <div class="paper-meta">Working Paper, 2025</div>
+        <div class="paper-title"><a href="#">Short Run Impacts of Place-based Economic Incentives</a></div>
+        <div class="paper-meta">with Jason DeBacker</div>
         <div class="paper-abstract">
-          This paper examines long-run neighborhood change following Empowerment Zone designation, using restricted Census microdata and a staggered difference-in-differences design.
+          This paper evaluates the short-run economic effects of the U.S. Empowerment Zone (EZ) and Enterprise Community (EC) programs on firms and workers in targeted areas. Using confidential Census microdata, we examine how designation influences business formation, closures, employment, and wages. Identification relies on a difference-in-differences framework with matched control tracts. We also distinguish between incumbent and newly entering firms and residents to assess who benefits from these policies. The analysis provides evidence on whether place-based incentives generate immediate improvements in local economic activity and labor market outcomes in distressed communities. Results are forthcoming.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-status">Working Paper</div>
+        <div class="paper-title"><a href="#">Efficacy of Local Flavored E-cigarette Bans</a></div>
+        <div class="paper-meta">with Danna Thomas and Roxana Gonzalez-Cortes</div>
+        <div class="paper-abstract">
+          Using retailer scanner data, we examine the impact of a six-month ban on the sale of flavored e-cigarettes in Washington state on tobacco product purchases. Utilizing a differences-in-differences research design, we find that aggregate e-cigarette sales within Washington decrease by nearly 43% during the ban period. Nevertheless, cross-jurisdictional shopping blunts the efficacy of the ban: e-cigarette sales occurring in Oregon and Idaho counties on the Washington border increase by nearly 48% and 17%, respectively. Moreover, cigarette sales in Washington increase by over 10% while the ban is in place. After the ban, cross-border shopping stops, and e-cigarette sales in Washington state quickly recover. The results indicate the need for an approach to tobacco control that accounts for inter-jurisdictional shopping behavior as well as substitution between types of tobacco products.
         </div>
       </div>
 
@@ -356,9 +351,45 @@
     <section id="teaching">
       <h2>Teaching</h2>
 
+      <p class="teaching-intro">
+        In the classroom, Kara enjoys helping students connect economic concepts to their own majors, experiences, and real-world questions. She has served as a teaching assistant for 15 undergraduate and graduate economics courses and taught ECON 224: Introduction to Economics to non-business majors.
+      </p>
+
+      <div class="teaching-subhead">Instructor of Record</div>
+
       <div class="course">
         <div class="course-name">ECON 224: Introduction to Economics</div>
-        <div class="course-detail">Instructor of Record &middot; University of South Carolina &middot; 2024&ndash;2025</div>
+        <div class="course-detail">University of South Carolina</div>
+      </div>
+
+      <div class="teaching-subhead">Teaching Assistant</div>
+
+      <div class="course">
+        <div class="course-name">ECON 711: Applied Microeconomics for Masters</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 562: Public Finance</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 555: Game Theory in Economics</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 516: Political Economy</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 515: Industrial Organization</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 321: Intermediate Microeconomics</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 224: Introduction to Economics</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 222: Introduction to Macroeconomics</div>
+      </div>
+      <div class="course">
+        <div class="course-name">ECON 221: Introduction to Microeconomics</div>
       </div>
 
     </section>
@@ -367,9 +398,14 @@
     <section id="writing">
       <h2>Econ Writing</h2>
 
+      <p class="writing-intro">
+        I am passionate about making economics accessible and believe that economic thinking is one of the most powerful tools for making sense of the world. If you are looking for an economics writer, <a href="mailto:kpjones@email.sc.edu">contact me</a> for further writing samples.
+      </p>
+
       <div class="writing-item">
-        <a href="#">Geoeconomics: Sanctions, Financial Leverage, and Game Theory</a>
-        <div class="writing-venue"><em>Common Good</em>, 2024</div>
+        <div><a href="https://commongoodmag.com/why-economists-are-talking-about-geoeconomics/" target="_blank">Game Theory and Why Economists Are Talking About &ldquo;Geoeconomics&rdquo; Again</a></div>
+        <div class="writing-subtitle">And why it matters for your everyday world.</div>
+        <div class="writing-venue"><em>Common Good</em> &middot; June 26, 2026</div>
       </div>
 
     </section>
@@ -384,7 +420,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Kara Jones &middot; PhD Candidate, Darla Moore School of Business
+    &copy; 2026 Kara Jones &middot; PhD Candidate, Darla Moore School of Business
   </footer>
 
 </body>
