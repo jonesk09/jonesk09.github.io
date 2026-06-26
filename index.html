@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kara Jones | PhD Candidate in Economics</title>
+  <style>
+    /* Color palette from karajlovett.com */
+    :root {
+      --bg-header: #f2ece8;        /* off-white/blush header */
+      --nav-text: #8c1f45;         /* dark pink/burgundy nav */
+      --accent-green: #2d5a3d;     /* dark green for accents/links */
+      --body-bg: #ffffff;
+      --text-main: #2c2c2c;
+      --text-muted: #666;
+      --border-light: #e0d8d4;
+      --section-divider: #f2ece8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text-main);
+      background: var(--body-bg);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      background: var(--bg-header);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--nav-text);
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: opacity 0.15s;
+    }
+
+    nav a:hover { opacity: 0.7; }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── Hero / intro ── */
+    .hero {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--border-light);
+      background: var(--bg-header);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .hero-photo-placeholder {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 3px solid var(--border-light);
+      background: var(--bg-header);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    .hero-text .title {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: var(--nav-text);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-text p {
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-info {
+      margin-top: 1.25rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .contact-info a {
+      color: var(--accent-green);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      font-family: 'Arial', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--nav-text);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* ── Papers ── */
+    .paper {
+      margin-bottom: 1.75rem;
+    }
+
+    .paper-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 0.2rem;
+    }
+
+    .paper-title a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .paper-title a:hover {
+      color: var(--accent-green);
+    }
+
+    .paper-meta {
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .paper-status {
+      display: inline-block;
+      font-family: 'Arial', sans-serif;
+      font-size: 11.5px;
+      background: var(--bg-header);
+      color: var(--nav-text);
+      border: 1px solid var(--border-light);
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .paper-abstract {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── Teaching ── */
+    .course {
+      margin-bottom: 1.25rem;
+    }
+
+    .course-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .course-detail {
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    /* ── Writing ── */
+    .writing-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .writing-item a {
+      font-weight: bold;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .writing-item a:hover { color: var(--accent-green); }
+
+    .writing-venue {
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    /* ── CV section ── */
+    .cv-section p {
+      margin-bottom: 0.75rem;
+    }
+
+    .cv-link {
+      display: inline-block;
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--body-bg);
+      background: var(--accent-green);
+      padding: 8px 20px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: opacity 0.15s;
+    }
+
+    .cv-link:hover { opacity: 0.85; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg-header);
+      text-align: center;
+      padding: 1.5rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 580px) {
+      .hero { flex-direction: column; align-items: center; text-align: center; }
+      .contact-info { text-align: center; }
+      nav ul { gap: 1.25rem; }
+      nav a { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#papers">Papers</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#writing">Econ Writing</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-photo-placeholder">Your photo here</div>
+      <div class="hero-text">
+        <h1>Kara Jones</h1>
+        <div class="title">PhD Candidate in Economics &middot; University of South Carolina</div>
+        <p>
+          I am a PhD candidate in economics at the Darla Moore School of Business, advised by Dr. Jason DeBacker. My research focuses on place-based economic policy and tax compliance.
+        </p>
+        <p>
+          I am on the job market in 2025&ndash;2026.
+        </p>
+        <div class="contact-info">
+          <a href="mailto:youremail@email.sc.edu">youremail@email.sc.edu</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Papers -->
+    <section id="papers">
+      <h2>Papers</h2>
+
+      <div class="paper">
+        <div class="paper-status">Job Market Paper</div>
+        <div class="paper-title"><a href="#">Tax Enforcement and Short-Term Rental Hosts: Evidence from Florida</a></div>
+        <div class="paper-meta">Working Paper, 2025</div>
+        <div class="paper-abstract">
+          This paper examines how enforcement shocks affect property tax compliance among short-term rental hosts, using Airbnb Voluntary Collection Agreements in Florida as a quasi-natural experiment. I apply a bunching estimator to AirDNA data (2015&ndash;2024) to identify behavioral responses around filing thresholds.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-status">Published</div>
+        <div class="paper-title"><a href="https://doi.org/10.3886/E249865V1" target="_blank">Reindustrialization Meets Rural Reality: FDI Incentives in Rural Counties</a></div>
+        <div class="paper-meta"><em>Contemporary Economic Policy</em>, 2025</div>
+        <div class="paper-abstract">
+          This paper studies the effects of foreign direct investment incentives on rural county labor markets, using a matched difference-in-differences design.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-status">Working Paper</div>
+        <div class="paper-title"><a href="#">Poverty Reduction or Relocation? Long-Run Neighborhood Change Following Place-Based Policy</a></div>
+        <div class="paper-meta">Working Paper, 2025</div>
+        <div class="paper-abstract">
+          This paper examines long-run neighborhood change following Empowerment Zone designation, using restricted Census microdata and a staggered difference-in-differences design.
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+
+      <div class="course">
+        <div class="course-name">ECON 224: Introduction to Economics</div>
+        <div class="course-detail">Instructor of Record &middot; University of South Carolina &middot; 2024&ndash;2025</div>
+      </div>
+
+    </section>
+
+    <!-- Econ Writing -->
+    <section id="writing">
+      <h2>Econ Writing</h2>
+
+      <div class="writing-item">
+        <a href="#">Geoeconomics: Sanctions, Financial Leverage, and Game Theory</a>
+        <div class="writing-venue"><em>Common Good</em>, 2024</div>
+      </div>
+
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="cv-section">
+      <h2>CV</h2>
+      <p>Download my full curriculum vitae below.</p>
+      <a class="cv-link" href="/files/cv.pdf" target="_blank">Download CV (PDF)</a>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Kara Jones &middot; PhD Candidate, Darla Moore School of Business
+  </footer>
+
+</body>
+</html>
