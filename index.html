@@ -25,34 +25,83 @@
       line-height: 1.75;
     }
 
-    /* Navigation */
-    nav {
-      background: var(--bg-header);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 56px;
-      border-bottom: 1px solid var(--border-light);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+/* Navigation */
+nav {
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+.nav-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--nav-text);
-      font-family: 'Arial', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: opacity 0.15s;
-    }
+nav ul { list-style: none; display: flex; gap: 2.5rem; }
 
-    nav a:hover { opacity: 0.7; }
+nav a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.15s;
+}
+
+nav a:hover { opacity: 0.7; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--nav-text);
+  border-radius: 2px;
+}
+
+@media (max-width: 620px) {
+  .nav-inner { justify-content: flex-end; position: relative; }
+  .nav-toggle { display: flex; }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--bg-header);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.5rem 0;
+  }
+
+  nav ul.open { display: flex; }
+
+  nav ul li a {
+    display: block;
+    padding: 0.75rem 2rem;
+    font-size: 13px;
+  }
+}
 
     /* Main layout */
     main {
@@ -262,16 +311,23 @@
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#papers">Papers</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#writing">Econ Writing</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#activities">Professional Activities</a></li>
-      <li><a href="#interests">Interests</a></li>
+<nav>
+  <div class="nav-inner">
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
+      <li><a href="#papers" onclick="closeNav()">Papers</a></li>
+      <li><a href="#teaching" onclick="closeNav()">Teaching</a></li>
+      <li><a href="#writing" onclick="closeNav()">Econ Writing</a></li>
+      <li><a href="#cv" onclick="closeNav()">CV</a></li>
+      <li><a href="#activities" onclick="closeNav()">Professional Activities</a></li>
+      <li><a href="#interests" onclick="closeNav()">Interests</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
   <main>
 
@@ -609,6 +665,14 @@
   <footer>
     &copy; 2026 Kara Jones &middot; PhD Candidate, Darla Moore School of Business
   </footer>
-
+<script>
+  function toggleNav() {
+    document.getElementById('nav-menu').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('nav-menu').classList.remove('open');
+  }
+</script>
+  
 </body>
 </html>
